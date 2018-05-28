@@ -1,14 +1,27 @@
-<h2>Hair Salon</h2>
-
-<h2> The List: </h2>
-
-#if($stylist)
-  <p>Click on a stylist to see the clients:</p>
-  <ul>
-    #foreach ($stylist in $stylists)
-      <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
-    #end
-  </ul>
-#else
-   <p>There are no clients</p>
+#if($success-add)
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $success-add's info has been added. -kevin
+  </div>
 #end
+
+<!-- #if($success-delete)
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $success-delete's info has been deleted. -kevin
+  </div>
+#end -->
+
+<h1>Our Stylists</h1>
+<hr>
+<div class="row">
+  #foreach ($stylist in $stylists)
+    <div class="col-xs-6 col-md-3">
+      <a href="/stylist/$stylist.getId()" class="thumbnail">
+        <h4>$stylist.getName()</h4>
+      </a>
+    </div>
+  #end
+</div>
+
+<hr>

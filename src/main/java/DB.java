@@ -6,6 +6,7 @@ public class DB {
     private static URI dbUri;
     public static Sql2o sql2o;
 
+    // change from local host database to deploy database to heroku
 
     static {
 
@@ -19,7 +20,7 @@ public class DB {
             int port = dbUri.getPort();
             String host = dbUri.getHost();
             String path = dbUri.getPath();
-
+            // username and password
             String username = (dbUri.getUserInfo() == null) ? "kevinmaina" : dbUri.getUserInfo().split(":")[0];
             String password = (dbUri.getUserInfo() == null) ? "maina123" : dbUri.getUserInfo().split(":")[1];
 

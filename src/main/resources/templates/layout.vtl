@@ -2,27 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>wildlife-tracker</title>
-    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel='stylesheet' href="/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/app.css'>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Quattrocento" rel="stylesheet">
+    <title>HAIR SALON</title>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
-        <h1>Hair salon </h1>
-          <div class="link-bar">
-            <div><p><a href="/">Home</a></p></div>
-            <div><p><a href="/Client">Clients</a></p></div>
-            <div><p><a href="/sighting/new">Update client</p></a></div>
-            <div><p><a href="/animals">Stylist</a></p></div>
-            <div><p><a href="/animals/new">Update stylist</a></p></div>
-            <div><p><a href="/animals/new">Add client</a></p></div>
-            <div><p><a href="/animals/new">Add stylist</a></p></div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/stylist/new">Add Stylist</a></li>
           </div>
-          #end
-      </div>
-      #parse( $template )
+        </div>
+      </nav>
+
+      #parse ($template)
 
     </div>
   </body>

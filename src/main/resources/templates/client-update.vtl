@@ -1,13 +1,33 @@
-<h1>$getclient.getName()</h1>
+<h2>Client Update | $client.getName()'s details</h2>
+<hr>
+<h4>Current stylist:
+#if($stylist.getId()>0)
+  $stylist.getName()
+#else
+  Please assign a stylist.
+#end</h4>
 
-<h2>Edit client:</h2>
-
-<form action="/client/update" method="post">
-  <label for="name">Name</label>
-  <input type="text" name="name">
-  </button type="submit" class="btn btn-default">Update name</button>
+<form action="/client/$client.getId()/update" method="post">
+  <label for="name">Update Name</label>
+  <p></p>
+  <input id="name" name="name" type="text" required>
+  <p></p>
+  <label for="description">Update Special Requests/Other Details</label>
+  <p></p>
+  <input id="description" name="description" type="text" required>
+  <p></p>
+  <label for="stylistId">Update Stylist Assignment</label>
+  <select id='stylistId' name='stylistId' type='text' required>
+    #foreach($stylist in $stylists)
+      <option value="$stylist.getId()">$stylist.getName()</option>
+    #end
+  </select>
+  <p></p>
+  <button type="submit" class="btn btn-info">Update Client Details</button>
 </form>
+<hr>
 
-<form action="/" method="post">
-  <button type="submit" class="btn btn-default" id="delete-client">Delete Client</button>
+<form action="/stylist/$client.getStylistId()/client/$client.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger" id="delete-client">Delete Client</button>
 </form>
+<hr>
