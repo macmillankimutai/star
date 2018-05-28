@@ -1,0 +1,14 @@
+<h2>Hair Salon</h2>
+
+<h2> The List: </h2>
+
+#if($stylist)
+  <p>Click on a stylist to see the clients:</p>
+  <ul>
+    #foreach ($stylist in $stylists)
+      <li><a href="/stylists/$stylist.getId()">$stylist.getName()</a></li>
+    #end
+  </ul>
+#else
+   <p>There are no clients</p>
+#end
