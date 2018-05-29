@@ -14,9 +14,13 @@ public class App {
     } else {
       port = 4567;
     }
+   staticFileLocation("/public");
+   String layout = "templates/layout.vtl";
+
     setPort(port);
     get("/", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
+         // model.put("stylist", request.session().attribute("stylist"));
          model.put("stylists", Stylist.all());
          model.put("template", "templates/index.vtl");
          return new ModelAndView(model, layout);

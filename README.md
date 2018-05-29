@@ -16,11 +16,19 @@ gradle will download and install junit and spark
 the 'gradle run' command will deploy the site to port 4567 by default
 
 Technologies used
-Java 1.8.0_101
+
+Java 1.8.0_10
+
 Gradle 3.0
+
 JUnit 4.+
+
 Spark 2.3
+
 Velocity Template Engine 1.7
+
 Postgresql 9.6
+
 Contributer
+
 Macmillan kimutai
