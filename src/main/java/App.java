@@ -22,7 +22,6 @@ public class App {
          return new ModelAndView(model, layout);
        }, new VelocityTemplateEngine());
 
-       //posts from /stylist/new/
        post("/", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
          String name = request.queryParams("name");
@@ -38,7 +37,7 @@ public class App {
          model.put("template", "templates/index.vtl");
          return new ModelAndView(model, layout);
        }, new VelocityTemplateEngine());
-         // get the new stylist page
+
        get("/stylist/:id/update", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
          Stylist stylist  = Stylist.find(Integer.parseInt(request.params("id")));
@@ -59,7 +58,7 @@ public class App {
          response.redirect(url);
          return null;
        });
-         // delete stylist
+
        post("/stylist/:id/delete", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
          Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
@@ -109,7 +108,7 @@ public class App {
          model.put("template", "templates/stylist.vtl");
          return new ModelAndView(model, layout);
        }, new VelocityTemplateEngine());
-        // get client or new client
+
        get("/client/:id/update", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
          Client client  = Client.find(Integer.parseInt(request.params("id")));
@@ -120,9 +119,6 @@ public class App {
          model.put("template", "templates/client-update.vtl");
          return new ModelAndView(model, layout);
        }, new VelocityTemplateEngine());
-
-
-       // post a new client to new client component
 
        post("/client/:id/update", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
@@ -143,7 +139,6 @@ public class App {
          Map<String, Object> model = new HashMap<String, Object>();
          Client client = Client.find(Integer.parseInt(request.params("id")));
          Stylist stylist = Stylist.find(client.getStylistId());
-         // model.put("success-delete", client.getName());
          client.delete();
          String url = String.format("/");
          response.redirect(url);
