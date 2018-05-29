@@ -6,7 +6,7 @@ public class Stylist {
   private String name;
   private String description;
   private int id;
-// attributes of a stylist
+
   public Stylist(String name, String description) {
     this.name = name;
     this.description = description;
@@ -90,7 +90,7 @@ public class Stylist {
         .executeUpdate();
     }
   }
-    // update client information
+
   public void delete() {
     try(Connection con = DB.sql2o.open()) {
     String sql = "UPDATE clients SET stylist_id=0 WHERE stylist_id=:id; DELETE FROM stylists WHERE id=:id;";
